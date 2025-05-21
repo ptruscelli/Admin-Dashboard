@@ -1,0 +1,263 @@
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
+
+/*-------- General Stuff ---------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+
+
+/*-------- Main Outer Grid --------*/
+
+.container {
+    display: grid;
+    grid-template-columns: 230px 3fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "sideNav searchNav searchNav"
+    /* "sideNav headerNav headerNav" */
+    "sideNav mainContent sideContent";
+    height: auto;
+    background-color: rgb(244, 242, 248);
+}
+
+
+
+/*-------- Left Sidebar --------*/
+
+.sideNav {
+    grid-area: sideNav;
+    display: flex;
+    flex-direction: column;
+    background-color: #332D56;
+    color: white;
+    padding-top: 1.3rem;
+}
+
+.sideNav > .logo > svg {
+    height: 2.2rem;
+    margin-left: 10px;
+    margin-right: 15px;
+    fill: white;
+}
+
+.sideNav > .logo {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    font-weight: 420;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sideLink {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    padding-left: 18px;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sideLink.separator {
+    margin-bottom: 60px;
+}
+
+
+
+/*-------- Top Nav Bar --------*/
+
+.searchNav {
+    grid-area: searchNav;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18px;
+    padding: 0 25px;
+    height: 85px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.102);
+}
+
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type="search"] {
+    outline: none;
+    border: none;
+    background-color: rgb(220, 220, 227);
+    height: 25px;
+    border-radius: 24px;
+    padding-left: 15px;
+}
+
+div.searchIcon {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.searchIcon > svg {
+    height: 22px;
+    fill: #5e5d66;
+    margin-right: 7px;
+}
+
+
+.buttons {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+
+.button > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: none;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #3c3a42;
+    text-align: center;
+    width: 85px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.button > a:hover {
+    border-bottom: 3px solid #332D56;
+}
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.notificationButton {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+}
+
+.notificationButton > svg {
+    position: relative;
+    width: 25px;
+    fill: #3c3a42;
+}
+
+.notificationButton:hover {
+    cursor: pointer;
+}
+
+div.profile > a {
+    display: flex;
+    align-items: center;  
+}
+
+div.profilePic {
+    height: 60px;
+    width: 60px;
+    background-image: url(images/astronaut-with-beer-instagram-profile-t999jr9lqq2x4u2m.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140%;
+    border-radius: 50%;
+    border: 1px solid #332D56;
+}
+
+.greeting {
+    font-size: 16px;
+    color: #3c3a42;
+}
+
+
+
+
+/*-------- Project Cards --------*/
+
+.mainContent {
+    grid-area: mainContent;
+}
+
+.mainContent > * {
+    border: 1px solid grey;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: auto;
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.cardIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+img.icon {
+    width: 20px;
+}
+
+
+
+/* SVG STUFF */
+
+.sideLink > svg {
+    height: 1.2rem;
+    fill: white;
+    margin-right: 14px;
+}
+
+
+
+
+/*-------- Hover Animations --------*/
+
+.sideLink:hover {
+    background-color: #0e0c1a55;
+}
+
+.sideLink:hover > p {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.468);
+}
+
+.sideLink:hover > svg {
+    filter: url(#svgGlowWhite);
+}
